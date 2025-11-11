@@ -71,6 +71,8 @@ class EmailManager():
         return
 
     def label_messages(self):
+        label_window = tk.Toplevel(self.window)
+        LabelMessage(label_window)
         return
 
 

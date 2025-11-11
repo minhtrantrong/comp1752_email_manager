@@ -2,6 +2,8 @@ import tkinter as tk
 import tkinter.scrolledtext as tkst
 import tkinter.messagebox as messagebox
 import font_manager as fonts
+import message_manager as mm
+from message import Message
 
 # Define a New Message class:
 class NewMessage:
@@ -68,6 +70,9 @@ class NewMessage:
         # Ask the user to confirm sending
         if messagebox.askyesno("Send Email", f"Send this message?\n\n{summary}"):
             messagebox.showinfo("Sent", "Message sent.")
+            # Add a new message to the message_manager.messages dictionary
+            new_message = Message(self.sender, subject, recipient, body)
+            mm.messages.update({len(mm.messages) + 1: new_message})
             # Close the compose window after sending
             self.window.destroy()
         return
