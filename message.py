@@ -14,5 +14,6 @@ class Message:
     def stars(self):
         stars = ""
         for i in range(self.priority):
-            stars += "*"
+            if i < 5:
+                stars += "*"
         return stars
