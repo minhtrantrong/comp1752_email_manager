@@ -20,4 +20,4 @@ def test_message_stars():
     """Test the stars method of the Message class."""
     assert messages_1.stars() == "**"
     assert messages_2.stars() == "*****"
-    assert messages_3.stars() == "*****"
+    assert messages_3.stars() == "*****" # max 5 stars although priority is 6
